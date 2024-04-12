@@ -10,6 +10,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<%@include file="header.jsp" %>
 <p></p>
 <div class="container">
 <div class="card">
@@ -23,18 +24,27 @@
  <button type="submit" class="btn btn-primary">Chercher</button>
  </form>
  <table class="table table-striped">
- <tr>
- <th>ID</th><th>Nom Bijoux</th><th>Prix</th>
- </tr>
- <c:forEach items="${model.Bijoux}" var="b">
- <tr>
- <td>${b.id_Bijoux }</td>
- <td>${b.nom_Bijoux }</td>
- <td>${b.prix }</td>
- <td><a onclick="return confirm('Etes-vous sûr ?')" href="supprimer.do?id=${s.id_Bijoux }">Supprimer</a></td>
- 		<td><a href="editer.do?id=${s.id_Bijoux }">Edit</a></td>
- </tr>
- </c:forEach>
+ 	<tr>
+ 		<th>ID</th>
+ 		<th>Nom Bijoux</th>
+ 		<th>PRIX</th>
+ 		 <th>MARQUE</th>
+ 		
+ 		 <th>Suppression</th>
+  		<th>Edition</th>
+ 		
+ 	</tr>
+ 	<c:forEach items="${model.Bijoux}" var="b">
+ 	<tr>
+ 		<td>${b.id_Bijoux }</td>
+ 		<td>${b.nom_Bijoux }</td>
+ 		<td>${b.prix }</td>
+ 		 <td>${b.Marque.nomMar }</td>
+ 		
+ 		<td><a onclick="return confirm('Etes-vous sûr ?')" href="supprimer.do?id=${b.id_Bijoux }">Supprimer</a></td>
+ 		<td><a href="editer.do?id=${b.id_Bijoux }">Edit</a></td>
+ 	</tr>
+ 	</c:forEach>
  </table>
  </div>
 </div>

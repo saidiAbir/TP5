@@ -17,6 +17,20 @@ private String nom_Bijoux;
 	@Column (name="PRIX")
 
 private double prix;
+	
+	private Marque Marque;
+	 public Bijoux(String nomBijoux, double prix,Marque Mar) {
+	super();
+	this.nom_Bijoux = nomBijoux;
+	this.prix = prix;
+	this.setMarque(Mar);
+	}
+	public Marque getMarque() {
+	return Marque;
+	}
+	public void setMarque(Marque Marque) {
+	this.Marque = Marque;
+	}
 public Bijoux() {
 super();
 }
